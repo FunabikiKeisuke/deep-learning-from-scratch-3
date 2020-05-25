@@ -18,7 +18,7 @@ class Function:
     def forward(self, x):
         raise NotImplementedError()
 
-    def backword(self, gy):
+    def backward(self, gy):
         raise NotImplementedError()
 
 
@@ -27,7 +27,7 @@ class Square(Function):
         y = x ** 2
         return y
 
-    def backword(self, gy):
+    def backward(self, gy):
         x = self.input.data
         gx = 2 * x * gy
         return gx
@@ -38,7 +38,7 @@ class Exp(Function):
         y = np.exp(x)
         return y
 
-    def backword(self, gy):
+    def backward(self, gy):
         x = self.input.data
         gx = np.exp(x) * gy
         return gx
@@ -54,7 +54,7 @@ b = B(a)
 y = C(b)
 
 y.grad = np.array(1.0)
-b.grad = C.backword(y.grad)
-a.grad = B.backword(b.grad)
-x.grad = A.backword(a.grad)
+b.grad = C.backward(y.grad)
+a.grad = B.backward(b.grad)
+x.grad = A.backward(a.grad)
 print(x.grad)
