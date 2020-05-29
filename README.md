@@ -7,6 +7,9 @@
   <a href="https://github.com/oreilly-japan/deep-learning-from-scratch-3/blob/master/LICENSE.md"><img
 		alt="MIT License"
 		src="http://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://travis-ci.org/FunabikiKeisuke/deep-learning-from-scratch-3"><img
+		alt="Build Status"
+		src="https://travis-ci.org/FunabikiKeisuke/deep-learning-from-scratch-3.svg?branch=master"></a>
 </p>
 
 
