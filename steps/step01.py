@@ -2,14 +2,12 @@ import numpy as np
 
 
 class Variable:
-    """
-    Put variables in the box
-    """
+    """「箱」に変数を入れる。"""
 
     def __init__(self, data):
         """
         Args:
-            data (ndarray): Input variable
+            data (ndarray): 入力変数
         """
         self.data = data
 
