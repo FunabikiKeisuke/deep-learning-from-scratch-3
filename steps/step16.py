@@ -2,7 +2,7 @@ import numpy as np
 
 
 class Variable:
-    """「箱」に変数を入れる。
+    """自身のノードの値、一つ前のノードから逆伝播された微分値、自身のノードを生み出した関数、自身のノードの世代を保持する。
 
     Attributes:
         data (numpy.ndarray): 格納する変数。
@@ -74,7 +74,6 @@ class Variable:
 
 def as_array(x):
     """numpy.ndarray以外の型をnumpy.ndarrayに変換する。"""
-
     if np.isscalar(x):
         return np.array(x)
     return x
