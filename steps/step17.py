@@ -59,9 +59,9 @@ class Variable:
         funcs = [self.creator]
         while funcs:
             f = funcs.pop()  # 1. 変数を生み出した関数を取得する。
-            gys = [output.grad for output in f.outputs]  # 2. 変数を生み出した関数の出力値を取得する。
+            # gys = [output.grad for output in f.outputs]  # 2. 変数を生み出した関数の出力値を取得する。
             gys = [output().grad for output in f.outputs]  # 2. 変数を生み出した関数の出力値を取得する。(output は弱参照)
-            # gxs = f.backward(*gys)  # 3. 変数を生み出した関数の逆伝播を呼び出す。
+            gxs = f.backward(*gys)  # 3. 変数を生み出した関数の逆伝播を呼び出す。
             if not isinstance(gxs, tuple):
                 gxs = gxs,
 
